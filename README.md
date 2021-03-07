@@ -11,6 +11,8 @@ you need two lines of HTML code in an HTML file (see [example.html](./src/exampl
 
 You can load the JS inline in your HTML code. No need to add it to the header section of your HTML file.
 
+> The table's id must be set to `rki` otherwise the script will not work.
+
 ```html
 <table id="rki"></table>
 <script src="./rki.js"></script>
@@ -28,10 +30,23 @@ const counties = ["LK Wetteraukreis", "LK Gießen"]
 
 If you like it more colourful please use CSS in you HTML to style the table ;-)
 
+The JavaScript will not modify the table tag itself. You could add a `style` attribute here as well. You may also add `<thead>` to the table if you like, e.g.
+```html
+<table id="rki" style="border: 1px solid black;">
+   <thead>
+      <tr>
+         <td>Name</td>
+         <td>BL</td>
+         <td>I-Wert</td>
+      </tr>
+   </thead>
+</table>
+```
 
 ## result
 
-The `rki.js` will load data from RKI API and adds per county of the `counties` array one table row. Each row will have three cells
+The `rki.js` will load data from RKI API and adds per county of the `counties` array one table row. Each row will have three cells.
+
 1. county name
 2. state
 3. cases per 100k inhabitants of the last 7 days
