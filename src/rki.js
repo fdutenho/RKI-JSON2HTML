@@ -1,4 +1,4 @@
-const counties = ["LK Wetteraukreis", "LK Gießen"] //must be the same names than in RKI JSON, field
+const counties = ["LK Wetteraukreis", "LK Gießen", "LK Lahn-Dill-Kreis"] //must be the same names than in RKI JSON, field
 const elemID = "rki"
 
 function displayTable() {
@@ -15,10 +15,17 @@ function displayTable() {
          var filteredRkiData = rkiData.features
             .filter(cur => counties.includes(cur.attributes.county))
             .forEach(curItem => {
+               console.debug("curItem: " + JSON.stringify(curItem))
                var newRow = tbody.insertRow()
                var cell1 = newRow.insertCell()
                var cell2 = newRow.insertCell()
                var cell3 = newRow.insertCell()
+
+               newRow.className="table-success"
+               console.debug("curItem.attributes.cases7_per_100k: " + curItem.attributes.cases7_per_100k)
+               if(curItem.attributes.cases7_per_100k>35) newRow.className="table-info"
+               if(curItem.attributes.cases7_per_100k>50) newRow.className="table-warning"
+               if(curItem.attributes.cases7_per_100k>100) newRow.className="table-danger"
 
                cell1.innerHTML = curItem.attributes.county
                cell2.innerHTML = curItem.attributes.BL
