@@ -22,7 +22,6 @@ function displayTable() {
                var cell3 = newRow.insertCell()
 
                newRow.className="table-success"
-               console.debug("curItem.attributes.cases7_per_100k: " + curItem.attributes.cases7_per_100k)
                if(curItem.attributes.cases7_per_100k>35) newRow.className="table-info"
                if(curItem.attributes.cases7_per_100k>50) newRow.className="table-warning"
                if(curItem.attributes.cases7_per_100k>100) newRow.className="table-danger"
