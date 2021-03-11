@@ -1,5 +1,4 @@
-const elemID = "rki"
-const cfgID = "cfg"
+var counties = ["LK Wetteraukreis","LK Gießen","LK Lahn-Dill-Kreis"]
 
 function searchTable(tableID) {
   var input = document.getElementById("searchTableInput");
@@ -28,8 +27,7 @@ function updateCountiesList(elem) {
       //removed from list
       counties = counties.filter(item => item !== elem.value)
    }
-   var cfgElem = document.getElementById(cfgID)
-   cfgElem.innerHTML = "var counties = " + JSON.stringify(counties)
+   document.getElementById("test").href = "./index.html?cfg=" + encodeURI(counties.join(","))
 }
 
 function displayCountySelector(selectTableID) {
