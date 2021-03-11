@@ -39,11 +39,7 @@ function displayTable() {
 
 
 var urlParams = new URLSearchParams(window.location.search);
-console.log("urlParams: " + urlParams.toString())
-
 var cfg = urlParams.get('cfg')
-console.log("cfg: " + cfg)
-
 counties = cfg.split(",")
 
 displayTable()
