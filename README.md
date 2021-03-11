@@ -7,7 +7,8 @@ Loads RKI JSON data and transforms selected counties into HTML table
 you need two lines of HTML code in an HTML file (see [example.html](./src/example.html))
 
 1. a table with id "rki": `<table id="rki" ></table>`
-2. load the rki.js: `<script src="./rki.js"></script>`
+2. load the config.js: `<script src="./config.js"></script>`
+3. load the rki.js: `<script src="./rki.js"></script>`
 
 You can load the JS inline in your HTML code. No need to add it to the header section of your HTML file.
 
@@ -15,6 +16,7 @@ You can load the JS inline in your HTML code. No need to add it to the header se
 
 ```html
 <table id="rki"></table>
+<script src="./config.js"></script>
 <script src="./rki.js"></script>
 ```
 
@@ -23,8 +25,11 @@ You can load the JS inline in your HTML code. No need to add it to the header se
 Have a look at [rki.js](./src/rki.js). You will find an array `counties` you may want to modify and adopt to your needs...
 
 ```javascript
-const counties = ["LK Wetteraukreis", "LK Gießen"]
+var counties = ["LK Wetteraukreis", "LK Gießen"]
 ```
+
+> see below. There is also a [config.html](./src/config.html) available, that helps on creating the `config.js` file...
+
 
 ## how to customize
 
@@ -71,3 +76,8 @@ becomes
    </tbody>
 </table>
 ```
+
+# Config Helper
+
+Loads all counties from RKI, displays them in a table and generates content for the `config.js` file.
+Just open [config.html](./src/config.html) in your browser and copy the generated content for `config.js` into `config.js`. That's it!
