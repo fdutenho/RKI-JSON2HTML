@@ -22,13 +22,13 @@ You can load the JS inline in your HTML code. No need to add it to the header se
 
 ## how to configure
 
-Have a look at [rki.js](./src/rki.js). You will find an array `counties` you may want to modify and adopt to your needs...
+Have a look at [config.js](./src/config.js). You will find an array `counties` you may want to modify and adopt to your needs...
 
 ```javascript
 var counties = ["LK Wetteraukreis", "LK Gießen"]
 ```
 
-> see below. There is also a [config.html](./src/config.html) available, that helps on creating the `config.js` file...
+> [see below](#config-helper). There is also a [config.html](./src/config.html) available, that helps on creating the `config.js` file...
 
 
 ## how to customize
