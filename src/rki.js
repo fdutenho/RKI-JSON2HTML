@@ -1,6 +1,6 @@
 const elemID = "rki"
 const cfgID = "cfg"
-var counties = ["LK Wetteraukreis","LK Gießen","LK Lahn-Dill-Kreis"]
+var counties = ["LK Wetteraukreis","LK Gießen"]
 
 function displayTable() {
    var tbl = document.getElementById(elemID)
@@ -40,6 +40,6 @@ function displayTable() {
 
 var urlParams = new URLSearchParams(window.location.search);
 var cfg = urlParams.get('cfg')
-counties = cfg.split(",")
+if(cfg) counties = cfg.split(",")
 
 displayTable()
